@@ -1,0 +1,47 @@
+AIM: Write html code to develop a webpage having two frames that divide the webpage into two equal rows and then divide the row into equal columns fill each frame with a different background color.
+CODE:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Four Boxes with Grid</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr; 
+    }
+    .box {
+      background-color: #3498db; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #box1 {
+      background-color: #3498db; 
+    }
+    #box2 {
+      background-color: #e74c3c; 
+    }
+    #box3 {
+      background-color: #2ecc71; 
+    }
+    #box4 {
+      background-color: #f39c12; 
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="box1">
+  </div>
+  <div class="box" id="box2">
+  </div>
+  <div class="box" id="box3">
+  </div>
+  <div class="box" id="box4">
+  </div>
+</body>
+</html>

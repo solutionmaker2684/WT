@@ -1,0 +1,45 @@
+AIM: Write a php script  to  read  data  from  txt  file and display  it in html  table  (the  file contains info in  format  Name: Password: Email).
+CODE:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Data from TXT File</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<?php
+$file_path = 'file1.txt';
+if (file_exists($file_path)) {
+    $lines = file($file_path, FILE_IGNORE_NEW_LINES);
+    echo "<table>";
+    echo "<tr><th>Name</th><th>Password</th><th>Email</th></tr>";
+       foreach ($lines as $line) {
+        // Split the line by ':'
+        $data = explode(':', $line);
+        // Display data in table rows
+        echo "<tr>";
+        foreach ($data as $value) {
+            echo "<td>$value</td>";
+        }
+        echo "</tr>";
+    }
+     echo "</table>";
+} else {
+    echo "File not found!";
+}
+?>
+</body>
+</html>

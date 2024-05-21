@@ -1,0 +1,111 @@
+AIM: Design web page for your college use href, list tags.
+CODE:
+Index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <img src="msit.png" alt="logo">
+
+        </div>
+        <div class="right">
+            <h1>Maharaja Surajmal Institute of Technology</h1>
+            <p>Affiliated to GGSIPU | NAAC Accredited 'A' Grade | NBA (CSE, IT, ECE,EEE) | Approved by AICTE | ISO 9001:2015 Certified</p>
+        </div>
+    </nav>
+    <div class="nav2">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Society</a></li>
+            <li><a href="#">Info Brochure</a></li>
+            <li><a href="#">Achievments</a></li>
+            <li><a href="#">Alumni</a></li>
+            <li><a href="#">Academeic Calendar</a></li>
+            <li><a href="#">Placements</a></li>
+            <li><a href="#">Events</a></li>
+        </ul>
+    </div>
+    <main>
+        <h1>Information Technology (NBA Accredited)</h1>
+        <h3>Program Description</h3>
+        <p class="intro">
+            Information Technology is most prominent and rapidly developing field in todays world. To maintain speed with latest trends in Information Technology industry, our Information Technology department is fully empowered. Our fully air-conditioned laboratories contain sufficient number of computer systems with latest hardware and software configuration. Since IT is composed of data processing and transmission, we are having latest communication hardware and software with proper multimedia support to each system. A very high speed internet connection is there in the labs. Net surfing is provided to the students as per their requirements. Guest faculty specialized in respective fields of Information Technology are invited from time to time to keep students in touch with latest trends in technology and to broaden their spectrum of knowledge. All facilities in the labs are continuously examined and upgraded whenever required. The department has well qualified and experienced faculty for guiding students in right direction. Our aim here is to expose students to latest and growing technologies which help them to become highly skilled IT professional.
+        </p>
+        <h4>Vison</h4>
+        <p class="vison">
+            To build a culture of innovation and  research in students and make them capable to solve upcoming challenges of human life using computing.
+        </p>
+        <h4>Mission</h4>
+        <p class="Mission">
+            <span class="bullet-point">M1</span> :To develop 'educational pathways' so that students can take their career towards success <br>
+        <span class="bullet-point">M2</span> To imbibe curiosity and support innovativeness by providing guidance to use the technology effectively. <br>
+        <span class="bullet-point">M3</span>:To inculcate management skills, integrity and honesty through curricular, co-curricular and extra-curricular activities.
+        </p>
+    </main>
+</body>
+</html>
+
+Style.css
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+nav{
+    display:flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+img{
+    height:100px;
+}
+a {
+    text-decoration: none;
+  }
+  li {
+    list-style: none;
+  }
+  .nav2{
+    height:10vh;
+    background-color: #338FFF
+  }
+  .nav2 ul{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 0
+  }
+  .nav2 ul li a {
+    font-weight: 700;
+    font-size: 14px;
+    
+  }
+   .nav2 ul a:hover{
+    font-weight: 1000;
+}
+.right h1{
+    color: #154391;
+}
+main{
+    margin-left: 25px;
+    margin-right: 25px;
+}
+main h1{
+    text-align: center;
+}
+main h3{
+    text-align: center;
+}
+main h4{
+    text-align: center;
+    color:#FF5722
+}
+.bullet-point{
+    color:#FF5722
+}

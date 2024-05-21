@@ -1,0 +1,52 @@
+AIM: Create XML file to store student information like Enrolment Number, Name  Mobile Number , Email Id.
+CODE:
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='cgpa.xsl'?> 
+<link rel="stylesheet" href="styles.css">
+<class>
+  <h4>STUDENT DATABASE</h4>
+<student>
+<id> 00115003121 </id><br>
+<name>Aarav</name><br>
+<email>Aarav@gmail.com</email><br>
+<phone> 9999999</phone><br><br>
+</student>
+<student>
+<id> 002215003121 </id><br>
+<name>Ananya</name><br>
+<email>ananya@gmail.com </email><br>
+<phone> 8888888 </phone><br><br>
+</student>
+<student>
+<id> 00315003121</id><br>
+<name> rajat</name><br>
+<email>rajat@gmail.com </email><br>
+<phone>77777777</phone><br>
+</student>
+</class>
+
+Styles.css
+body {
+    font-family: Arial, sans-serif;
+}
+h4 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+student {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+id, name, email, phone {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+email, phone {
+    color: #007BFF;
+}
+email:hover, phone:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}

@@ -1,0 +1,43 @@
+AIM: Design a webpage of your choice with html and css
+CODE:
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('https://assets.iplt20.com/bcci/articles/1708604741_2.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #1667e0;;
+            color: white;
+            padding: 27px;
+            font-size: 20px;
+        }
+        .navbar div {
+            margin-right: 20px;
+        }
+        .navbar img {
+            height: 50px;
+        }
+        .navbar2{
+            background-color: #073376;
+            color: white;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div><img src="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" alt="IPL Logo"></div>
+        <div>MATCHES | VIDEOS | STATS | POINTS TABLE | TEAMS | NEWS | AUCTION | MORE</div>
+        <div>FOLLOW US | SEARCH</div>
+    </div>
+   <div class="navbar2">
+    Home  /  News  /  Schedule For First Two Weeks Of Tata Ipl 2024 Announced
+   </div>
+</body>
+</html>

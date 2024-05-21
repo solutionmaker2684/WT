@@ -1,0 +1,40 @@
+AIM: Write a PHP Script for login authentication. Design an html form which takes username and password from user and validate against stored username and password in file.
+CODE:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form action="login.php" method="post">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
+<?php
+function validateLogin($username, $password, $file_path) {
+    $lines = file($file_path, FILE_IGNORE_NEW_LINES);
+    foreach ($lines as $line) {
+        $data = explode(':', $line);
+        if ($data[0] === $username && $data[1] === $password) {
+            return true;
+        }
+    }
+    return false;
+}
+$file_path = 'users.txt';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    if (validateLogin($username, $password, $file_path)) {
+        echo "<h2>Login successful!</h2>";
+    } else {
+        echo "<h2>Login failed. Invalid username or password.</h2>";
+    }
+}
+?>

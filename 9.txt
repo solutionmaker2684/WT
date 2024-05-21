@@ -1,0 +1,97 @@
+AIM: Write PHP Script for storing and retrieving user information from MySql table.   a. Design A HTML page which takes Name, Address, Email and Mobile No. From user (register.php)   b. Store this data in Mysql database / text file.   c. Next page display all user in html table using PHP (display.php)
+CODE:
+a. Design a HTML page for user registration (register.php):
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+</head>
+<body>
+    <h2>User Registration</h2>
+    <form action="register.php" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" required><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="mobile">Mobile No.:</label><br>
+        <input type="text" id="mobile" name="mobile" required><br><br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
+b. PHP script to store user information in MySQL database (register.php):
+<?php
+
+$servername = "localhost";
+$username = "root"; 
+$password = ""; 
+$database = "users"; 
+
+$conn = new mysqli($servername, $username, $password, $database);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $address = $_POST['address'];
+    $email = $_POST['email'];
+    $mobile = $_POST['mobile'];
+
+    $sql = "INSERT INTO users (name, address, email, mobile) VALUES ('$name', '$address', '$email', '$mobile')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+$conn->close();
+?>
+c. PHP script to display all users in HTML table (display.php):
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+</head>
+<body>
+    <h2>User List</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Mobile No.</th>
+        </tr>
+        <?php
+        $servername = "localhost";
+        $username = "root"; 
+        $password = ""; 
+        $database = "users"; 
+
+        $conn = new mysqli($servername, $username, $password, $database);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        $sql = "SELECT * FROM users";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>".$row["name"]."</td>";
+                echo "<td>".$row["address"]."</td>";
+                echo "<td>".$row["email"]."</td>";
+                echo "<td>".$row["mobile"]."</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "0 results";
+        }
+        $conn->close();
+        ?>
+    </table>
+</body>
+</html>
